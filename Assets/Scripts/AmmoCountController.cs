@@ -6,7 +6,7 @@ using TMPro;
 public class AmmoCountController : MonoBehaviour
 {
     public TextMeshProUGUI ammoCountText;
-    public int ammo = 3;
+    public int ammo = 10;
 
     // Start is called before the first frame update
     void Start()

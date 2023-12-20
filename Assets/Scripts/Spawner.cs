@@ -15,8 +15,6 @@ public class Spawner : MonoBehaviour
     public GameObject generalScripts;
     private GameInitializationSettings gameInitializationSettings;
 
-    private finalBossSetting;
-
     void Start()
     {
         // Start spawning objects at the specified rate

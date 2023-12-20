@@ -3359,7 +3359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCountText: {fileID: 1605809518}
-  ammo: 5
+  ammo: 6
 --- !u!1 &1712811593
 GameObject:
   m_ObjectHideFlags: 0
