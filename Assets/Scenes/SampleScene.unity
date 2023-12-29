@@ -322,6 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
   score: 0
+  enemySpawnArea: {fileID: 1890636521}
   generalScripts: {fileID: 1693906614}
 --- !u!4 &226166849
 Transform:
@@ -3283,6 +3284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roundInProgress: 0
+  finalBoss: 0
   playerDied: 0
 --- !u!4 &1693906616
 Transform:

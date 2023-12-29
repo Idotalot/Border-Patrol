@@ -11,11 +11,12 @@ public class AmmoCountController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ammoCountText = GameObject.Find("Canvas/ammoCount").GetComponent<TextMeshProUGUI>(); // Defineren van ammo text object
+        // Defineren van ammo text object
+        ammoCountText = GameObject.Find("Canvas/ammoCount").GetComponent<TextMeshProUGUI>();
+
         if (ammoCountText != null )
         {
             Debug.Log("AmmoCountController: ammoCountText is found");
-            Debug.Log("Ammo currently = " + ammo.ToString());
             ammoCountText.text = ammo.ToString(); // Aanpassen van text naar daadwerkelijke data
         }
         else

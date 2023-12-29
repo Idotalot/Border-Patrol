@@ -37,12 +37,15 @@ public class EnemyController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die(); // If health drops to or below zero, destroy the enemy
-            ScoreCount scoreCount = scoreCountObject.GetComponent<ScoreCount>();
-            scoreCount.AddScore();
+            if (gameObject.name != "gigaMarcel(Clone)")
+            {
+                ScoreCount scoreCount = scoreCountObject.GetComponent<ScoreCount>();
+                scoreCount.AddScore();
 
-            AmmoCountController ammoCountController = ammoCountObject.GetComponent<AmmoCountController>();
-            ammoCountController.AddAmmo(5);
+                AmmoCountController ammoCountController = ammoCountObject.GetComponent<AmmoCountController>();
+                ammoCountController.AddAmmo(5);
+            }
+            Die(); // If health drops to or below zero, destroy the enemy
         }
     }
 

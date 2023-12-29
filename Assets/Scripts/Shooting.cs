@@ -37,7 +37,6 @@ public class Shooting : MonoBehaviour
 
         if (ammoCountController != null)
         {
-            Debug.Log("ammoCountController exists. Ammo: " + ammoCountController.ammo.ToString());
             if (ammoCountController.ammo != 0)
             {
                 Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);

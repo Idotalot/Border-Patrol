@@ -20,7 +20,7 @@ public class DeathScript : MonoBehaviour
         for (int i = 0; i < deathScreen.transform.childCount; i++)
         {
             SpriteRenderer childRenderer = deathScreen.transform.GetChild(i).GetComponent<SpriteRenderer>();
-            Debug.Log(childRenderer.name + ": " + childRenderer.sortingLayerID);
+            Debug.Log(childRenderer.name + ": " + childRenderer.sortingLayerName);
         }
         // Iterate through all child GameObjects using foreach
     }
@@ -28,17 +28,16 @@ public class DeathScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* foreach GameObject gameObject in GameObject deathScreen
-        {
+        gameInitializationSettings = generalScripts.GetComponent<GameInitializationSettings>();
 
-        }
-        if (gameInitializationSettings.playerDied == false)
+        if (gameInitializationSettings.playerDied == true)
         {
-            deathScreenSprite.sortingLayer = 0;
+            for (int i = 0; i < deathScreen.transform.childCount; i++)
+            {
+                SpriteRenderer childRenderer = deathScreen.transform.GetChild(i).GetComponent<SpriteRenderer>();
+                childRenderer.sortingLayerName = "DeathScreen";
+            }
         }
-        else (gameInitializationSettings.playerDied == true) 
-        {
-            deathScreen.layer
-        } */
+        
     }
 }
