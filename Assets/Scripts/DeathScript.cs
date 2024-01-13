@@ -39,8 +39,8 @@ public class DeathScript : MonoBehaviour
                 deathScreenText.text = "You suck!";
                 childRenderer.sortingLayerName = "DeathScreen";
 
-                retryTransform.anchoredPosition = new Vector2(85, -200);
-                exitTransform.anchoredPosition = new Vector2(-85, -200);
+                retryTransform.anchoredPosition = new Vector2(-85, -200);
+                exitTransform.anchoredPosition = new Vector2(85, -200);
             }
             else if (gameInitializationSettings.playerDied == false)
             {
