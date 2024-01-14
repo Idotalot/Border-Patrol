@@ -32,7 +32,6 @@ public class DeathScript : MonoBehaviour
 
         for (int i = 0; i < deathScreen.transform.childCount; i++)
         {
-            /*Vector2 retryTransformPos = new Vector2(85, )*/
             SpriteRenderer childRenderer = deathScreen.transform.GetChild(i).GetComponent<SpriteRenderer>();
             if (gameInitializationSettings.playerDied == true)
             {
@@ -41,6 +40,13 @@ public class DeathScript : MonoBehaviour
 
                 retryTransform.anchoredPosition = new Vector2(-85, -200);
                 exitTransform.anchoredPosition = new Vector2(85, -200);
+                if (gameInitializationSettings.playerWon == true)
+                {
+                    SpriteRenderer chadFloppa = GameObject.Find("deathScreen/chadfloppa").GetComponent<SpriteRenderer>();
+                    Debug.Log(chadFloppa.ToString());
+                    chadFloppa.sortingOrder = 2;
+                    deathScreenText.text = "GG ez W";
+                }
             }
             else if (gameInitializationSettings.playerDied == false)
             {
@@ -49,6 +55,12 @@ public class DeathScript : MonoBehaviour
 
                 retryTransform.anchoredPosition = new Vector2(85, -300);
                 exitTransform.anchoredPosition = new Vector2(-85, -300);
+
+                SpriteRenderer chadFloppa = GameObject.Find("deathScreen/chadfloppa").GetComponent<SpriteRenderer>();
+                Debug.Log(chadFloppa.ToString());
+                chadFloppa.sortingOrder = 0;
+
+                gameInitializationSettings.playerWon = false;
             }
         }
     }

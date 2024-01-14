@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using JetBrains.Annotations;
 
 public class EnemyController : MonoBehaviour
 {
@@ -10,9 +11,13 @@ public class EnemyController : MonoBehaviour
     public GameObject scoreCountObject;
     public GameObject ammoCountObject;
 
+    public GameObject generalScripts;
+    public GameInitializationSettings gameInitializationSettings;
     void Start()
-    {
+    {        
         currentHealth = maxHealth; // Set initial health
+        generalScripts = GameObject.Find("GeneralScripts");
+        gameInitializationSettings = generalScripts.GetComponent<GameInitializationSettings>();
     }
 
     void Update()
@@ -44,6 +49,12 @@ public class EnemyController : MonoBehaviour
 
                 AmmoCountController ammoCountController = ammoCountObject.GetComponent<AmmoCountController>();
                 ammoCountController.AddAmmo(5);
+            }
+            else
+            {
+                gameInitializationSettings.roundInProgress = false;
+                gameInitializationSettings.playerDied = true;
+                gameInitializationSettings.playerWon = true;
             }
             Die(); // If health drops to or below zero, destroy the enemy
         }

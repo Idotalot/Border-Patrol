@@ -35,7 +35,7 @@ public class ScoreCount : MonoBehaviour
     {
         score += 3;
         scoreText.text = score.ToString();
-        if (score >= 60)
+        if (score >= 30)
         {
             Debug.Log("Blasphemy!");
             gameInitializationSettings.finalBoss = true;
