@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameStartScript : MonoBehaviour
 {
     // Game objects defineren
     public GameObject generalScripts;
     public GameObject scoreCountObject;
+    public TextMeshProUGUI scoreText;
     public GameObject ammoCountObject;
+    public TextMeshProUGUI ammoText;
     public GameObject border;
+    public TextMeshProUGUI borderText;
 
     // Game scripts defineren
     private GameInitializationSettings gameInitializationSettings;
@@ -21,6 +25,7 @@ public class GameStartScript : MonoBehaviour
     void Start()
     {
         gameInitializationSettings = generalScripts.GetComponent<GameInitializationSettings>();
+
         scoreCount = scoreCountObject.GetComponent<ScoreCount>();
         ammoCountController = ammoCountObject.GetComponent<AmmoCountController>();
         borderController = border.GetComponent<BorderController>();
@@ -39,7 +44,10 @@ public class GameStartScript : MonoBehaviour
         gameInitializationSettings.finalBoss = false;
 
         scoreCount.score = 0;
-        ammoCountController.ammo = 0;
-        borderController.currentHealth = 0;
+        scoreText.text = scoreCount.score.ToString();
+        ammoCountController.ammo = 10;
+        ammoText.text = ammoCountController.ammo.ToString();
+        borderController.currentHealth = 10;
+        borderText.text = borderController.currentHealth.ToString();
     }    
 }

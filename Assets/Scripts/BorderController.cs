@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BorderController : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class BorderController : MonoBehaviour
     // Game settings defineren
     public GameObject generalScripts;
     private GameInitializationSettings gameInitializationSettings;
+    public TextMeshProUGUI borderHealthText;
 
     void Start()
     {
         currentHealth = maxHealth;
         gameInitializationSettings = generalScripts.GetComponent<GameInitializationSettings>();
+        borderHealthText.text = currentHealth.ToString();
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class BorderController : MonoBehaviour
     {
         currentHealth -= damage; // Reduce health by the amount of damage taken
         Debug.Log("Current border health = " + currentHealth.ToString());
+        borderHealthText.text = currentHealth.ToString();
 
         if (currentHealth <= 0)
         {

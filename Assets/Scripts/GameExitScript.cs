@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameExitScript : MonoBehaviour
 {
-    public Button exitButton;
     // Start is called before the first frame update
     void Start()
     {
