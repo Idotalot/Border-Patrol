@@ -8,6 +8,7 @@ public class GameInitializationSettings : MonoBehaviour
     public bool finalBoss = false;
     public bool playerDied = false;
     public bool playerWon = false;
+    public bool startScreen = true;
 
     // Start is called before the first frame update
     void Start()

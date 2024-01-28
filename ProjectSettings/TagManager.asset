@@ -48,3 +48,6 @@ TagManager:
   - name: DeathScreen
     uniqueID: 1104959
     locked: 0
+  - name: StartScreen
+    uniqueID: 2968963033
+    locked: 0

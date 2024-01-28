@@ -42,12 +42,13 @@ public class GameStartScript : MonoBehaviour
         gameInitializationSettings.playerDied = false;
         gameInitializationSettings.roundInProgress = true;
         gameInitializationSettings.finalBoss = false;
+        gameInitializationSettings.startScreen = true;
 
         scoreCount.score = 0;
         scoreText.text = scoreCount.score.ToString();
-        ammoCountController.ammo = 10;
+        ammoCountController.ammo = 30;
         ammoText.text = ammoCountController.ammo.ToString();
-        borderController.currentHealth = 10;
+        borderController.currentHealth = 100;
         borderText.text = borderController.currentHealth.ToString();
     }    
 }

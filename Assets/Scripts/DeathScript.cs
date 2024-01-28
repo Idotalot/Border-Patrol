@@ -33,6 +33,7 @@ public class DeathScript : MonoBehaviour
         for (int i = 0; i < deathScreen.transform.childCount; i++)
         {
             SpriteRenderer childRenderer = deathScreen.transform.GetChild(i).GetComponent<SpriteRenderer>();
+
             if (gameInitializationSettings.playerDied == true)
             {
                 deathScreenText.text = "You suck!";
@@ -43,7 +44,6 @@ public class DeathScript : MonoBehaviour
                 if (gameInitializationSettings.playerWon == true)
                 {
                     SpriteRenderer chadFloppa = GameObject.Find("deathScreen/chadfloppa").GetComponent<SpriteRenderer>();
-                    Debug.Log(chadFloppa.ToString());
                     chadFloppa.sortingOrder = 2;
                     deathScreenText.text = "GG ez W";
                 }
@@ -57,7 +57,6 @@ public class DeathScript : MonoBehaviour
                 exitTransform.anchoredPosition = new Vector2(-85, -300);
 
                 SpriteRenderer chadFloppa = GameObject.Find("deathScreen/chadfloppa").GetComponent<SpriteRenderer>();
-                Debug.Log(chadFloppa.ToString());
                 chadFloppa.sortingOrder = 0;
 
                 gameInitializationSettings.playerWon = false;
