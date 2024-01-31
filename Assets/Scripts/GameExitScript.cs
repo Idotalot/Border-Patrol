@@ -1,3 +1,9 @@
+/*
+ * Jordy Perret - IO3S1AV
+ * Border Patrol Alienist
+ * 14-11-2023
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,11 +28,15 @@ public class GameExitScript : MonoBehaviour
     {
         
     }
+
+    // 'QuitGame' wordt gebruikt als de speler op een afsluitknop drukt
     public void QuitGame()
     {
+        // Als ronde niet bezig is
         if (gameInitializationSettings.roundInProgress == false)
         {
             Debug.Log("Exit requested");
+            // Als UNITY EDITOR aanwezig wordt de editor NIET afgesloten, anders WEL
             #if UNITY_EDITOR
                         UnityEditor.EditorApplication.isPlaying = false;
             #else

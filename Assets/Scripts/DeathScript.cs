@@ -1,3 +1,9 @@
+/*
+ * Jordy Perret - IO3S1AV
+ * Border Patrol Alienist
+ * 14-11-2023
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -39,8 +45,8 @@ public class DeathScript : MonoBehaviour
                 deathScreenText.text = "You suck!";
                 childRenderer.sortingLayerName = "DeathScreen";
 
-                retryTransform.anchoredPosition = new Vector2(-85, -200);
-                exitTransform.anchoredPosition = new Vector2(85, -200);
+                retryTransform.anchoredPosition = new Vector2(-145, -350);
+                exitTransform.anchoredPosition = new Vector2(145, -350);
                 if (gameInitializationSettings.playerWon == true)
                 {
                     SpriteRenderer chadFloppa = GameObject.Find("deathScreen/chadfloppa").GetComponent<SpriteRenderer>();
@@ -53,8 +59,8 @@ public class DeathScript : MonoBehaviour
                 deathScreenText.text = "";
                 childRenderer.sortingLayerName = "InvisibleLayer";
 
-                retryTransform.anchoredPosition = new Vector2(85, -300);
-                exitTransform.anchoredPosition = new Vector2(-85, -300);
+                retryTransform.anchoredPosition = new Vector2(85, -1000);
+                exitTransform.anchoredPosition = new Vector2(-85, -1000);
 
                 SpriteRenderer chadFloppa = GameObject.Find("deathScreen/chadfloppa").GetComponent<SpriteRenderer>();
                 chadFloppa.sortingOrder = 0;

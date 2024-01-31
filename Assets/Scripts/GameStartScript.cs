@@ -1,3 +1,9 @@
+/*
+ * Jordy Perret - IO3S1AV
+ * Border Patrol Alienist
+ * 14-11-2023
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +11,7 @@ using TMPro;
 
 public class GameStartScript : MonoBehaviour
 {
-    // Game objects defineren
+    // Script properties defineren
     public GameObject generalScripts;
     public GameObject scoreCountObject;
     public TextMeshProUGUI scoreText;
@@ -39,11 +45,13 @@ public class GameStartScript : MonoBehaviour
 
     public void StartGame()
     {
+        // Game settings aanpassen als de game start
         gameInitializationSettings.playerDied = false;
         gameInitializationSettings.roundInProgress = true;
         gameInitializationSettings.finalBoss = false;
         gameInitializationSettings.startScreen = true;
 
+        // Game waardes aanpassen
         scoreCount.score = 0;
         scoreText.text = scoreCount.score.ToString();
         ammoCountController.ammo = 30;

@@ -1,8 +1,15 @@
+/*
+ * Jordy Perret - IO3S1AV
+ * Border Patrol Alienist
+ * 14-11-2023
+ */
+
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    // Script properties defineren
     public GameObject prefabToSpawn;
     public GameObject gigaMarcelToSpawn;
     public float spawnRate = 2f;
@@ -20,6 +27,7 @@ public class Spawner : MonoBehaviour
         // Start spawning objects at the specified rate
         gameInitializationSettings = generalScripts.GetComponent<GameInitializationSettings>();
 
+        // Constant herhalen van een 'SpawnObject' functie
         InvokeRepeating("SpawnObject", 0f, spawnRate);
     }
 
@@ -30,8 +38,10 @@ public class Spawner : MonoBehaviour
 
     void SpawnObject()
     {
+        // Check of game settings gefineert is
         if (gameInitializationSettings != null)
         {
+            // Check of ronde bezig is en final boss niet aanwezig is
             if (gameInitializationSettings.roundInProgress == true && gameInitializationSettings.finalBoss == false)
             {
                 // Spawn ruimte defineren
@@ -57,10 +67,13 @@ public class Spawner : MonoBehaviour
         }        
     }
 
+    // Final boss functie
     public void SpawnBoss()
     {
+        // Check of game settings bestaat
         if (gameInitializationSettings != null)
         {
+            // Check of ronde bezig en en final boss setting aanstaat.
             if (gameInitializationSettings.roundInProgress == true && gameInitializationSettings.finalBoss == true && GameObject.Find("gigaMarcel(Clone)") == null)
             {
                 // Spawn ruimte defineren
@@ -73,7 +86,6 @@ public class Spawner : MonoBehaviour
                 // Spawn final boss
                 Instantiate(gigaMarcelToSpawn, randomSpawnPoint, Quaternion.identity);
                 Spawner spawner = parentObject.GetComponent<Spawner>();
-                Debug.Log(GameObject.Find("gigaMarcel"));
             }
         }
     }

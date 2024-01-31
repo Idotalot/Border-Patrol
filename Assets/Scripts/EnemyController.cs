@@ -1,3 +1,9 @@
+/*
+ * Jordy Perret - IO3S1AV
+ * Border Patrol Alienist
+ * 14-11-2023
+ */
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
